@@ -219,6 +219,9 @@ Apache-2.0
 
 
 
+ngx-scanner-qrcode
+LGPL-2.1+
+
 qrcode-generator
 MIT
 
