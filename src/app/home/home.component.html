@@ -1,0 +1,54 @@
+<!-- generar-qr.component.html -->
+<div class="flex flex-col items-center justify-center h-screen bg-gray-800">
+  <div class="bg-gray-700 p-8 rounded-lg shadow-lg text-white text-center relative">
+    <h1 class="text-5xl font-extrabold mb-4">Generador y Visor de Códigos QR</h1>
+
+    <!-- Botones para las pestañas -->
+    <div class="flex justify-center mb-4">
+      <button
+        class="bg-gray-600 hover:bg-gray-700 text-gray-300 py-3 px-6 rounded-full mr-4 transition duration-300 shadow-md"
+        (click)="mostrarCrear()">Crear</button>
+      <a href="leerQR"
+        class="bg-gray-600 hover:bg-gray-700 text-gray-300 py-3 px-6 rounded-full transition duration-300 shadow-md"
+        >Leer QR</a>
+    </div>
+
+    <!-- Código QR -->
+    <div id="codigo-qr" class="mb-4 flex items-center justify-center">
+      <div *ngIf="codigoQR">
+        <!-- Muestra la salida del código QR centrada -->
+        <div [innerHTML]="codigoQR"></div>
+      </div>
+    </div>
+
+
+
+    <!-- Input y botón para introducir y generar QR -->
+    <div *ngIf="mostrarInput" class="mt-4">
+      <label for="urlInput" class="text-gray-300">Introduce la URL:</label>
+      <input id="urlInput" type="text" [(ngModel)]="urlInput" class="border rounded p-2 w-full mt-2 text-black">
+
+      <button
+        class="bg-gray-600 hover:bg-gray-700 text-gray-300 py-3 px-6 rounded-full mt-2 transition duration-300 shadow-md"
+        (click)="generarQR()">Generar</button>
+    </div>
+
+    <!-- Contenido dinámico -->
+    <div id="contenido" class="mt-8">
+      <!-- generar-qr.component.html -->
+    </div>
+
+    <!-- Botón de eliminar en la esquina inferior derecha -->
+    <button class="absolute bottom-4 right-4 text-red-500" *ngIf="urlInput" (click)="urlInput = ''; codigoQR  = ''">
+      <!-- Utiliza el ícono de eliminar (puedes cambiarlo según tu preferencia) -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="32" height="32" viewBox="0 0 24 24" stroke-width="1" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M4 7l16 0" />
+        <path d="M10 11l0 6" />
+        <path d="M14 11l0 6" />
+        <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+        <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+      </svg>
+    </button>
+  </div>
+</div>

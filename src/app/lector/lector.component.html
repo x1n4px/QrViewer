@@ -1,0 +1,14 @@
+<!-- generar-qr.component.html -->
+<div class="flex flex-col items-center justify-center h-screen bg-gray-800">
+  <div class="bg-gray-700 p-8 rounded-lg shadow-lg text-white text-center relative">
+    <!-- ... Otro contenido ... -->
+
+    <!-- Elemento de video para la cámara -->
+    <video #video autoplay playsinline class="hidden"></video>
+
+    <!-- Contenedor de lectura de código QR -->
+    <ngx-qrcode-reader (onRead)="manejarLecturaQR($event)" [stop]="true" [autostart]="true" [video]="video"></ngx-qrcode-reader>
+
+    <!-- ... Otro contenido ... -->
+  </div>
+</div>
