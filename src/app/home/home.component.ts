@@ -17,24 +17,25 @@ export class HomeComponent implements OnInit{
 
 
 
-  generarQR(): void {
-    const tipoQR = QRCode(0, 'L');
-    tipoQR.addData(this.urlInput);
-    tipoQR.make();
+  mostrarCrearComponente = true;
+  mostrarLeerQRComponente = false;
+  mostrarLeerImagenComponente = false;
 
-    const modulo = 10;
-    this.codigoQR = tipoQR.createImgTag(modulo);
-    console.log(this.codigoQR); // Imprime en la consola para verificar el contenido
-    this.mostrarInput = false;
-  }
-
-
-  llamarFuncion() {
-    throw new Error('Method not implemented.');
-  }
   mostrarCrear() {
-    this.mostrarInput = true;
+    this.mostrarCrearComponente = true;
+    this.mostrarLeerQRComponente = false;
+    this.mostrarLeerImagenComponente = false;
   }
 
+  mostrarLeerQR() {
+    this.mostrarCrearComponente = false;
+    this.mostrarLeerQRComponente = true;
+    this.mostrarLeerImagenComponente = false;
+  }
 
+  mostrarLeerImagen() {
+    this.mostrarCrearComponente = false;
+    this.mostrarLeerQRComponente = false;
+    this.mostrarLeerImagenComponente = true;
+  }
 }
