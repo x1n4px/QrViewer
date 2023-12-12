@@ -1,6 +1,7 @@
 # QrProyect
 
 > [!NOTE]
+> Paquetes a instalar:
 > npm install ngx-scanner-qrcode
 
 
